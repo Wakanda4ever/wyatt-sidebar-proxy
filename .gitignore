@@ -61,7 +61,6 @@ client/dist/bundle.js
 
 # sample data
 *.csv
-*.json
 
 # macOS
 .DS_Store
