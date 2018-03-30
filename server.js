@@ -1,4 +1,4 @@
-require('newrelic');
+// require('newrelic');
 const express = require("express");
 // const morgan = require("morgan");
 const proxy = require("express-http-proxy");
@@ -6,7 +6,8 @@ const path = require("path");
 const app = express();
 const bodyParser = require("body-parser");
 
-const SIDEBAR_DOMAIN = 'localhost:3010';
+const SIDEBAR_DOMAIN = '34.212.130.122:3010';
+// const SIDEBAR_DOMAIN = 'localhost:3010';
 // const sidebarDomain = '13.56.34.255';
 
 // app.use(morgan("dev"));
@@ -106,6 +107,7 @@ app.get(
 app.get("/:id", function(req, res) {
   res.sendFile(path.join(__dirname + "/public/index.html"));
 });
-app.listen(3000, function() {
-  console.log("proxy server is live on port 3000!");
+const PORT = 8080;
+app.listen(PORT, function() {
+  console.log(`proxy server is live on port ${PORT}`);
 });
